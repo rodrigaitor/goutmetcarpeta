@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Dulce & Gourmet</title>
+    <link rel="stylesheet" href="/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🍰 Dulce & Gourmet</h1>
+                <p>El placer está en los detalles</p>
+            </div>
+            <nav>
+                <ul>
+                     <li><a href="index.html">Inicio</a></li>
+                    <li><a href="/Secundarioas/recetas.html">Recetas</a></li>
+                    <li><a href="/Secundarioas/reposteria.html">Repostería</a></li>
+                    <li><a href="/Secundarioas/Tips.html">Tips</a></li>
+                    <li><a href="/Secundarioas/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>📬 Contacto</h1>
+            <p>¿Dudas, sugerencias o colaboraciones? Escríbenos</p>
+        </div>
+    </section>
+
+    <section class="contacto-container">
+        <div class="container contacto-wrapper">
+            
+            <div class="contacto-info">
+                <h3>Información de contacto</h3>
+                <p>📧 <strong>Email:</strong> sotosantos.rodrigo760@gmail.com</p>
+                <p>📱 <strong>WhatsApp:</strong> +52 55 51944147</p>
+                <p>📍 <strong>Ubicación:</strong> Ciudad de México</p>
+                <p>🕒 <strong>Horario:</strong> Lunes a Viernes, 9:00 - 18:00</p>
+                
+                <div class="redes-sociales">
+                    <h4>Síguenos</h4>
+                    <p>📸 Instagram: @dulceygourmet</p>
+                    <p>📘 Facebook: /dulceygourmet</p>
+                    <p>🎥 TikTok: @dulceygourmet</p>
+                </div>
+            </div>
+
+            <div class="contacto-form">
+                <h3>Envíanos un mensaje</h3>
+                <form id="formContacto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Selecciona...</option>
+                            <option value="receta">Duda sobre una receta</option>
+                            <option value="colaboracion">Colaboración o prensa</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar mensaje ✉️</button>
+                    <p id="mensajeConfirmacion" class="mensaje-confirmacion"></p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Dulce & Gourmet – Todos los derechos reservados</p>
+            <p>Diseñado con ❤️ para amantes de la buena mesa</p>
+        </div>
+    </footer>
+
+    <script>
+        const formContacto = document.getElementById('formContacto');
+        const mensajeConfirmacion = document.getElementById('mensajeConfirmacion');
+
+        if (formContacto) {
+            formContacto.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nombre = document.getElementById('nombre').value;
+                mensajeConfirmacion.innerHTML = `✅ ¡Gracias ${nombre}! Hemos recibido tu mensaje. Te responderemos en menos de 24 horas.`;
+                mensajeConfirmacion.style.color = 'green';
+                formContacto.reset();
+                setTimeout(() => {
+                    mensajeConfirmacion.innerHTML = '';
+                }, 5000);
+            });
+        }
+    </script>
+
+</body>
+</html>
